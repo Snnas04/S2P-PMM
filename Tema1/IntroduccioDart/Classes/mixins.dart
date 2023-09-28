@@ -9,15 +9,15 @@ abstract class Au extends Animal {}
 abstract class Peix extends Animal {}
 
 // Caracteríostiques ja implementades que afegirem a classes
-abstract class Volar {
+mixin Volar {
   void volar() => print('Estic volant');
 }
 
-abstract class Nadar {
+mixin Nadar {
   void nadar() => print('Estic nedant');
 }
 
-abstract class Caminar {
+mixin Caminar {
   void caminar() => print('Estic caminant');
 }
 

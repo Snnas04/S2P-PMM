@@ -147,6 +147,7 @@ demoLlistes() {
 
   print(parells);
   print(stuff);
+  print(stuff2);
   var imparells = [1, 3, 5];
   imparells.add(7);
   // Donaria error
@@ -207,7 +208,7 @@ demoSets() {
     [1]
   };
   // Conjunt buit
-  // Realment això és un map ja que ambdos utilitzen claus {}
+  // Realment això és un map ja que ambos utilitzen claus {}
   var map_buit = {};
   // Per forçar que sigui un conjunt utilitzar Set<tipus>
   print(parells);
@@ -285,4 +286,6 @@ demoRunes() {
   print(iconesString);
 }
 
-void main() {}
+void main() {
+  demoVariables();
+}

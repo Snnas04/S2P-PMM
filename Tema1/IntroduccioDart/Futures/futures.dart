@@ -10,7 +10,7 @@ Future httpGet(String url) {
 // Amb sintaxi lambda functions i el codi més ordenat
 // Fixau-vos que a la funció anterior, la data és dinàmica però aquí forçam que sigui un String
 Future<String> httpGet2(String url) async {
-  return Future.delayed(new Duration(seconds: 1), () => 'Fent petició a: $url');
+  return Future.delayed(new Duration(seconds: 3), () => 'Fent petició a: $url');
 }
 
 void main() {

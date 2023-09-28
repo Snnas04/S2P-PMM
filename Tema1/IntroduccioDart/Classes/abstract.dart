@@ -4,7 +4,7 @@
 // però encara no es sap quina serà la lògica
 
 void main() {
-  final me = Me(4,10);
+  final me = Me(4);
   final moix = Moix(4);
 
   me.emetreSo();
@@ -29,15 +29,14 @@ abstract class Animal {
 
 // La classe de la qual depengui Animal, haurà d'implementar els mètodes i constructors
 class Me extends Animal {
-  int? kgLlana;
-  
-  Me(int cames, this.kgLlana) : super(cames);
+  Me(int cames) : super(cames);
   Me.senseCames() : super(0);
 
   void emetreSo() => print('Beeeee');
 }
 
 class Moix extends Animal {
+  int? coa;
 
   Moix(int cames) : super(cames);
 
