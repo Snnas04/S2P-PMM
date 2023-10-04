@@ -24,7 +24,6 @@ class Cuadrat {
 
   // Una de les característiques és que els getters i setters ens permeten utilitzar-se com
   // una propietat i queda molt net, a més de poder afegir lògica a dintre
-
   set area(double area) {
     this._costat = math.sqrt(area);
   }
