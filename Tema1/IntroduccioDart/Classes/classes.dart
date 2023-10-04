@@ -35,7 +35,6 @@ class PersonaAmbEdat {
   }
 
   // També podriem crear un objecte que tingui un NamedConstructor sense parametres
-
   PersonaAmbEdat.parametresNormbrats(
       {required String nom, required String cognoms, int edat = 0}) {
     this.nom = nom;

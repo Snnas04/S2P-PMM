@@ -12,7 +12,6 @@ class Cuadrat {
   }
 
   // Definició de getters i setters
-
   set costat(double costat) {
     _costat = costat;
   }
