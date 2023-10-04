@@ -165,6 +165,8 @@ demoLlistes() {
   print(parells[2]);
   print(imparells[imparells.length - 1]);
   print(stuff[2]);
+
+  demoCollectionIfFor();
 }
 
 demoCollectionIfFor() {
