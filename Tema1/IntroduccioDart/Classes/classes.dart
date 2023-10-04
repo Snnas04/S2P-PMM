@@ -1,6 +1,6 @@
 // Creació de classes/Objectes
 
-import 'dart:math';
+// import 'dart:math';
 
 class Persona {
   // Aquesta seria la declaració de variables correcte, però hauriem d'utilitzar l'opció
@@ -78,8 +78,8 @@ void main() {
   // Aquest cop, quan cream una persona amb els paràmetres nombrats, ens demana
   // els paràmetres per nom, però li podem posar l'ordre que volguem
   // i fixau-vos que edat és opcional
-  PersonaAmbEdat persona3 =
-      new PersonaAmbEdat.parametresNormbrats(nom: 'Jane', cognoms: 'Doe');
-  PersonaAmbEdat persona4 = new PersonaAmbEdat.parametresNormbrats(
-      nom: 'Jane', cognoms: 'Doe', edat: 10);
+  // PersonaAmbEdat persona3 =
+  //     new PersonaAmbEdat.parametresNormbrats(nom: 'Jane', cognoms: 'Doe');
+  // PersonaAmbEdat persona4 = new PersonaAmbEdat.parametresNormbrats(
+  //     nom: 'Jane', cognoms: 'Doe', edat: 10);
 }
