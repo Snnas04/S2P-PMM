@@ -1,7 +1,7 @@
 // // Realitza un programa, que mitjançant una funció la qual rep per paràmetres tres valors corresponents a hores, minuts i segons en format int, imprimeixi la hora en format: 01:49:11
 
 void main() {
-  int hora = 220;
+  int hora = 20;
   int min = 34;
   int seg = 32;
 
@@ -29,6 +29,9 @@ void formatHores(int hora, int min, int seg) {
     diesPassats++;
   }
 
+  // donam un format a les hores
+  // si els dies passats es 0, perque el valor d'hores es menor a 24 només imprimim les hores, els minuts i els segons
+  // en el cas de que el valor de les hores sigui 24 o major afegim a devant quants de dies han passat
   if (diesPassats == 0) {
     horaFormatada = "${hora.toString().padLeft(2, '0')}:${min.toString().padLeft(2, '0')}:${seg.toString().padLeft(2, '0')}";
   } 
