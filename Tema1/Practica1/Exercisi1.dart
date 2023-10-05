@@ -1,12 +1,18 @@
 // Realitza un programa, que mitjançant una funció la qual rep per paràmetres tres valors corresponents a hores, minuts i segons en format int, imprimeixi la hora en format: 01:49:11
 
 void main() {
-  formatHores(240, 808, 75);
+  int hora = 240;
+  int min = 434;
+  int seg = 32;
+
+  formatHores(hora, min, seg);
 }
 
 void formatHores(int hora, int min, int seg) {
   int diesPassats = 0;
 
+  // Amb els tres bucles controlam que feim que si el valor introduit supera un valor valid
+  // En el cas de sobrepassar aquest valor valid feim la diferencia i sumam un al parametre major, en el cas de lse hores anam sumant dies
   while (seg >= 60) {
     seg -= 60;
     min += 1;
@@ -21,8 +27,6 @@ void formatHores(int hora, int min, int seg) {
     hora -= 24;
     diesPassats++;
   }
-
-
 
   print("$diesPassats dies - $hora:$min:$seg");
 }
