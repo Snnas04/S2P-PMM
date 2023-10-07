@@ -44,5 +44,3 @@ bool esPrimer(int num) {
   
   return true;
 }
-
-

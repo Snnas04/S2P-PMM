@@ -3,3 +3,7 @@
 void main() {
   
 }
+
+class Client {
+  
+}
