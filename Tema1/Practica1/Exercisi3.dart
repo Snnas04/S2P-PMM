@@ -18,14 +18,14 @@ void main() {
   llistesMotos[4] = Moto("7890LMN", "Ducati", "Panigale V4R", false, "543210987E", 1398, 1000);
 
   // Clients
-  Client client1 = Client("12345678A", "Joan", "joan@gmail.com", "654321098", "4567890123456789");
-  Client client2 = Client("987654321B", "Maria", "maria@gmail.com", "987654321", "1234567890123456");
+  Client client1 = Client("12345678A", "Esteve", "esteve@gmail.com", "654321098", "4567890123456789");
+  Client client2 = Client("987654321B", "Marc", "marc@gmail.com", "987654321", "1234567890123456");
 
   // Realitza el “lliurament” d’alguns cotxes i motos amb el mètode llogar() als clients creats.
-  llistesCotxes[1].llogar();
-  llistesCotxes[2].llogar();
-  llistesMotos[0].llogar();
-  llistesMotos[1].llogar();
+  llistesCotxes[1].llogar(client1);
+  llistesCotxes[2].llogar(client2);
+  llistesMotos[4].llogar(client1);
+  llistesMotos[0].llogar(client2);
 
   // Compta quants cotxes i motos hi llogats i digues quants n’hi ha en total.
   int numCotxesLlogats = llistesCotxes.where((cotxe) => cotxe.llogat).length;
@@ -108,9 +108,9 @@ abstract class Vehicle {
   set setQuilometratge(int quilometratge) => this.quilometratge = quilometratge;
   int get getQuilometratge => quilometratge;
 
-  void llogar() {
+  void llogar(Client client) {
     llogat = true;
-    print("Vehicle llogat");
+    print("Vehicle llogat per ${client.getNom}");
   }
 
   void retornar() {
