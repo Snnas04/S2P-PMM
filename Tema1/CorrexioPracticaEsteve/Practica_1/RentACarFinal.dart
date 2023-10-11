@@ -143,9 +143,10 @@ abstract class Vehicle {
   }
 
   //Metode 'retornar()' per canviar l'atribut 'llogat' a false.
-  void retornar() {
+  void retornar(Client client) {
     llogat = false;
     dni = '';
+    client.vehiclesLlogats.removeWhere((vehicle) => vehicle.matricula == matricula);
     print("S'ha tornat el vehicle amb matricula $matricula");
   }
 
@@ -260,7 +261,7 @@ void main() {
   client2.llogarVehicle(cotxes[1]); //Provam de llogar un cotxe que ja esta llogat.
 
   //Tornam alguns vehicles.
-  client4.vehiclesLlogats[0].retornar();
+  client4.vehiclesLlogats[0].retornar(client4);
 
   //Comptam els vehicles llogats.
   int cotxesLlogats = cotxes.where((cotxe) => cotxe.estaLlogat()).length;

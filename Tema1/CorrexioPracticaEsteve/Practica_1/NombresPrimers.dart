@@ -1,9 +1,16 @@
+import 'dart:io';
 import 'dart:math';
 
 //Cream una funcio per mostrar els nombres primers
 // menors que el nombre introduit per parametre i
 // tambe retornam una llista amb aquests.
 List<int> llista_n_primers(int n) {
+
+  if(n < 0) {
+    print("S'ha de introduir un nombre positiu.");
+    exit(-1);
+  }
+
   var primers = <int>[];
 
   int intValue = 2;
@@ -55,7 +62,7 @@ mostrarParelles(List<dynamic> primers) {
 
 void main() {
   //Cridam la funcio 'llista_n_primers' i guardam la llista retornada en la variable 'primers'.
-  var primers = llista_n_primers(144);
+  var primers = llista_n_primers(44);
 
   //Mostram les parelles de la llista indicada per parametre.
   mostrarParelles(primers);
