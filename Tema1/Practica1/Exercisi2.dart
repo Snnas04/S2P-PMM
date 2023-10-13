@@ -2,7 +2,7 @@
 //Exemple en el document de la Practica.
 
 void main() {
-  int maxNum = 44;
+  int maxNum = 100000;
 
   generarPrimers(maxNum);
   print("\n=============\n");
