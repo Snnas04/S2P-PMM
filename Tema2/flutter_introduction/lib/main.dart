@@ -2,18 +2,26 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    MyApp()
+  );
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       title: 'Exemple Flutter',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Exemple Flutter'),
+          title: const Text('Exemple Flutter'),
         ),
-        body: Center(
+        body: const Center(
           child: Text('Hello World'),
         ),
       ),
-    ));
+    );
+  }
 }
