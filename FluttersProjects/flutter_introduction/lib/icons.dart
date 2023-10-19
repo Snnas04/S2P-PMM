@@ -24,17 +24,13 @@ class NewWidget extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Example Flutterdasd'),
           ),
-          body: Center(
-            child: Container(
-              width: 400,
-              height: 400,
-              color: Colors.amber,
-              child: Image.asset(
-                'assets/archIcon.png'
-                ),
-              ),
+          body: const Center(
+              child: Icon(
+                Icons.architecture,
+                size: 250,
+                color: Color(0xFF19A0C2)),
             )
-      )
+          ),
     );
   }
 }
