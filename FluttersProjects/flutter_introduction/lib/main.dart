@@ -1,40 +1,48 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    NewWidget(),
-  );
-}
+void main() => runApp(const MyApp());
 
-class NewWidget extends StatelessWidget {
-  TextStyle textStyle = const TextStyle(fontSize: 40);
-
-  NewWidget({
-    super.key,
-  });
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Example Flutters',
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-      ),
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Example Flutterdasd'),
-          ),
-          body: Center(
-            child: Container(
-              width: 400,
-              height: 400,
-              color: Colors.amber,
-              child: Image.asset(
-                'assets/archIcon.png'
-                ),
-              ),
-            )
-      )
+      debugShowCheckedModeBanner: false,
+      title: 'My First Flutter App',
+      home: HomePage(),
     );
   }
+}
+
+class HomePage extends StatelessWidget {
+  final estil = const TextStyle(fontSize: 24);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('Contador'),
+        ),
+
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Nombre de clics', style: estil),
+              Text('0', style: estil,)
+              ],
+          )
+        ),
+
+        floatingActionButton: FloatingActionButton(
+          onPressed: boto_polsat,
+          child: const Icon(Icons.add),
+        ),
+    );
+  }
+}
+
+void boto_polsat() {
+  print("S'ha pitjat el boto");
 }

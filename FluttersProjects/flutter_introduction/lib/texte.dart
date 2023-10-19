@@ -28,7 +28,8 @@ class NewWidget extends StatelessWidget {
             color: Colors.white,
             child: Center(
               child: Row(
-                children: [
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children:  [
                   Text(
                     "Text1",
                     style: textStyle,
@@ -42,7 +43,6 @@ class NewWidget extends StatelessWidget {
                     style: textStyle.copyWith(fontSize: 50),
                   ),
                 ],
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
               ),
             ),
           )),
