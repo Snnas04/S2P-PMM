@@ -1,9 +1,20 @@
-import 'package:exercici_2/screens/home_page.dart';
+import 'package:exercici_2/routes/routes.dart';
 import 'package:flutter/material.dart';
 
 
 void main() => runApp(MyApp());
 
+
+// class MyApp extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return MaterialApp(
+//      debugShowCheckedModeBanner: false,
+//      title: 'Components',
+//      home: HomePage(),
+//    );
+//  }
+// }
 
 class MyApp extends StatelessWidget {
  @override
@@ -11,8 +22,11 @@ class MyApp extends StatelessWidget {
    return MaterialApp(
      debugShowCheckedModeBanner: false,
      title: 'Components',
-     home: HomePage(),
+     // home: HomePage(),
+     initialRoute: '/',
+     routes: getRoutes(),
    );
  }
 }
+
 
