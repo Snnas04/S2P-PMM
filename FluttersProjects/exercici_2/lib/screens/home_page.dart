@@ -1,4 +1,3 @@
-import 'package:exercici_2/screens/alert_page.dart';
 import 'package:exercici_2/screens/providers/menu_providers.dart';
 import 'package:exercici_2/utils/icono_string_utils.dart';
 import 'package:flutter/material.dart';

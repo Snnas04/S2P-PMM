@@ -49,9 +49,11 @@ Widget _cardTipus2() {
  return Card(
    child: Column(
   children: [
-        Image(
-          image: NetworkImage('https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonduck.com%2Ficons%2F64943%2Farchlinux&psig=AOvVaw1xYboJBcEodwatvX_zox0G&ust=1698661112932000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCPifl_SDm4IDFQAAAAAdAAAAABAR')
-          ),
+        Container(
+          child: Image(
+            image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Archlinux-icon-crystal-64.svg/1200px-Archlinux-icon-crystal-64.svg.png'),
+            ),
+        ),
         Text('Arch Linux Icon'),
       ],
     ),
