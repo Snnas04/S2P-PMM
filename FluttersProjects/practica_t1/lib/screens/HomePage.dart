@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: _mainContainer(context), // Pass the BuildContext to _mainContainer
-      backgroundColor: Color(0xFF1C1C35), // Use a Color object
     );
   }
 }
