@@ -6,8 +6,8 @@ import 'package:practica_t1/screens/WidgetPage.dart';
 
 Map<String, WidgetBuilder> getRoutes(){
  return <String, WidgetBuilder>{
-       '/'         : (BuildContext context) => HomePage(),
-       'personal'     : (BuildContext context) => PresonalPage(),
-       'widget'    : (BuildContext context) => WidgetPage(),
-     };
+    '/'         : (BuildContext context) => const HomePage(),
+    'personal': (BuildContext context) => PersonalPage(),
+    'widget'    : (BuildContext context) => const WidgetPage(),
+  };
 }

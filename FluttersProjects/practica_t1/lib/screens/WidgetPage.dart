@@ -9,7 +9,7 @@ class WidgetPage extends StatelessWidget {
   final titelStyle = const TextStyle(
     fontSize: 50,
     fontWeight: FontWeight.bold,
-    color: Colors.blue,
+    color: Colors.red,
   );
 
 
