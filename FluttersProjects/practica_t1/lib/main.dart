@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: getTheme(),
       title: 'Components',
       // home: HomePage(),
       initialRoute: '/',
@@ -18,3 +18,14 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+getTheme() {
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: const ColorScheme.dark().copyWith(
+        primary: Colors.blue,
+        secondary: Colors.blue,
+      ),
+    );
+  }
