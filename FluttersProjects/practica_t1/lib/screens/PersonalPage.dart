@@ -17,7 +17,6 @@ class PersonalPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Obtener el modelo de información del usuario del contexto.
     final userInfoModel = Provider.of<UserInfoModel>(context);
-
     // Obtener la información del usuario actual.
     final userInfo = userInfoModel.userInfo;
 
@@ -30,8 +29,8 @@ class PersonalPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Personal Page'), // Título de la barra de la aplicación.
-        centerTitle: true, // Centrar el título en la barra de la aplicación.
+        title: const Text('Personal Page'),
+        centerTitle: true,
       ),
       body: _userInfo(context, userInfo, userInfoModel), // Llamar a la función _userInfo para construir el contenido de la página.
     );
@@ -65,17 +64,66 @@ class PersonalPage extends StatelessWidget {
           ),
           controller: nameController,
           onChanged: (value) {
-            userInfo = userInfo.copyWith(name: value);
-          }, // Utilizar el nameController para actualizar el nombre del usuario.
+          userInfo = userInfo.copyWith(name: value);
+        }, // Utilizar el nameController para actualizar el nombre del usuario. 
         ),
 
         const SizedBox(height: 20,),
 
-        // Repetir el mismo patrón para otros campos del usuario (Surname, Email, Phone, Birthdate).
+        TextField(
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'Surname',
+          ),
+          controller: surnameController,
+          onChanged: (value) {
+          userInfo = userInfo.copyWith(surname: value);
+        },  // Utilizar el surnameController para actualizar el nombre del usuario.
+        ),
 
-        _buttons(context, userInfoModel) // Llamar a la función _buttons para mostrar los botones de navegación.
-      ],
-    );
+        const SizedBox(height: 20,),
+
+        TextField(
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'Email',
+          ),
+          controller: emailController,
+          onChanged: (value) {
+          userInfo = userInfo.copyWith(email: value);
+        },  // Utilizar el emailController para actualizar el nombre del usuario.
+        ),
+
+        const SizedBox(height: 20,),
+
+        TextField(
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'Phone',
+          ),
+          controller: phoneController,
+          onChanged: (value) {
+          userInfo = userInfo.copyWith(phone: value);
+        }, // Utilizar el phoneController para actualizar el nombre del usuario.
+        ),
+
+        const SizedBox(height: 20,),
+
+        TextField(
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'Birthdate',
+          ),
+          controller: birthdateController,
+          onChanged: (value) {
+          userInfo = userInfo.copyWith(birthdate: value);
+        },  // Utilizar el birthdateController para actualizar el nombre del usuario.
+        ),
+
+        const SizedBox(height: 20,),
+
+        _buttons(context, userInfoModel)
+      ]);
   }
 
   // Función para construir los botones de navegación.
@@ -85,7 +133,7 @@ class PersonalPage extends StatelessWidget {
       children: [
         ElevatedButton(
           onPressed: () {
-            Navigator.pop(context); // Navegar de regreso a la página anterior.
+            Navigator.pop(context); // Volvera a la pagina anterior.
           },
           child: const Icon(Icons.arrow_back),
         ),
@@ -94,7 +142,7 @@ class PersonalPage extends StatelessWidget {
 
         ElevatedButton(
           onPressed: () {
-            // Crear un nuevo objeto UserInfo con los datos actualizados del formulario.
+            // Actualizar la infromacin del usuario con los valores ingresados en el formulario.
             UserInfo updatedUserInfo = UserInfo(
               name: nameController.text,
               surname: surnameController.text,
@@ -103,10 +151,8 @@ class PersonalPage extends StatelessWidget {
               birthdate: birthdateController.text,
             );
 
-            // Actualizar el modelo de información del usuario con la información actualizada.
-            userInfoModel.updateUserInfo(updatedUserInfo);
-
-            Navigator.pop(context); // Navegar de regreso a la página anterior.
+            userInfoModel.updateUserInfo(updatedUserInfo); // Actualizar el modelo de información del usuario.
+            Navigator.pop(context); // Volvera a la pagina anterior.
           },
           child: const Icon(Icons.save),
         ),

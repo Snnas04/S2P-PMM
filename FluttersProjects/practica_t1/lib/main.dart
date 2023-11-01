@@ -9,10 +9,10 @@ void main() {
 
   // Crear un usuario predeterminado con valores ficticios.
   UserInfo defaultUser = UserInfo(
-    name: 'Default Name',
-    surname: 'Default Surname',
-    email: 'default@email.com',
-    phone: '1234567890',
+    name: 'Def Username',
+    surname: 'Def Surname',
+    email: 'defuseremail@email.com',
+    phone: '600 144 033',
     birthdate: '01/01/2000',
   );
 
