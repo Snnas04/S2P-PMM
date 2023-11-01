@@ -4,7 +4,10 @@ import 'package:provider/provider.dart';
 import 'package:practica_t1/screens/providers/UserInformation.dart';
 
 void main() {
+  // Crear una instancia de UserInfoModel para administrar la información del usuario.
   UserInfoModel userInfoModel = UserInfoModel();
+
+  // Crear un usuario predeterminado con valores ficticios.
   UserInfo defaultUser = UserInfo(
     name: 'Default Name',
     surname: 'Default Surname',
@@ -13,16 +16,18 @@ void main() {
     birthdate: '01/01/2000',
   );
 
+  // Actualizar el modelo de información del usuario con el usuario predeterminado.
   userInfoModel.updateUserInfo(defaultUser);
 
+  // Ejecutar la aplicación Flutter.
   runApp(
+    // Utilizar ChangeNotifierProvider para proporcionar userInfoModel a la aplicación.
     ChangeNotifierProvider(
       create: (context) => userInfoModel,
-      child: const MyApp(),
+      child: const MyApp(), // Ejecutar la clase MyApp como la raíz de la aplicación.
     ),
   );
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -31,23 +36,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: getTheme(),
-      title: 'Components',
-      // home: HomePage(),
-      initialRoute: '/',
-      routes: getRoutes(),
+      theme: getTheme(), // Utilizar el tema personalizado definido en la función getTheme().
+      title: 'Practica T1', // Título de la aplicación.
+      initialRoute: '/', // Ruta inicial de la aplicación.
+      routes: getRoutes(), // Obtener las rutas definidas en la función getRoutes().
     );
   }
 }
 
-
+// Función que devuelve un tema personalizado para la aplicación.
 getTheme() {
   return ThemeData(
     colorScheme: const ColorScheme.dark().copyWith(
-      primary: Colors.red,
+      primary: Colors.red, // Definir el color primario como rojo.
     ),
-    appBarTheme: const AppBarTheme( // Define the appBarTheme named parameter
-      backgroundColor: Colors.red,
+    appBarTheme: const AppBarTheme( // Definir el tema de la barra de la aplicación.
+      backgroundColor: Colors.red, // Establecer el color de fondo de la barra de la aplicación como rojo.
     ),
   );
 }
