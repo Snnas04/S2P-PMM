@@ -23,7 +23,13 @@ class UserInfo {
   String birthdate;
 
   // Constructor con valores predeterminados.
-  UserInfo({this.name = '', this.surname = '', this.email = '', this.phone = '', this.birthdate = ''});
+  UserInfo({
+    this.name = 'Def Username', 
+    this.surname = 'Def Surname', 
+    this.email = 'defuseremail@email.com', 
+    this.phone = '600 144 033', 
+    this.birthdate = '01/01/2000'
+  });
 
   // Función para crear una copia de UserInfo con valores opcionales actualizados.
   UserInfo copyWith({String? name, String? surname, String? email, String? phone, String? birthdate}) {

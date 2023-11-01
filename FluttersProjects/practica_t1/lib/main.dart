@@ -7,18 +7,6 @@ void main() {
   // Crear una instancia de UserInfoModel para administrar la información del usuario.
   UserInfoModel userInfoModel = UserInfoModel();
 
-  // Crear un usuario predeterminado con valores ficticios.
-  UserInfo defaultUser = UserInfo(
-    name: 'Def Username',
-    surname: 'Def Surname',
-    email: 'defuseremail@email.com',
-    phone: '600 144 033',
-    birthdate: '01/01/2000',
-  );
-
-  // Actualizar el modelo de información del usuario con el usuario predeterminado.
-  userInfoModel.updateUserInfo(defaultUser);
-
   // Ejecutar la aplicación Flutter.
   runApp(
     // Utilizar ChangeNotifierProvider para proporcionar userInfoModel a la aplicación.
