@@ -49,14 +49,19 @@ Widget _cardTipus2() {
  return Card(
    child: Column(
   children: [
+        const FadeInImage(
+         placeholder: AssetImage('assets/jar-loading.gif'),
+         image: NetworkImage('https://www.freegreatpicture.com/files/30/20083-large-beach-coast.jpg'),
+         fadeInDuration: Duration(milliseconds: 100),
+         height: 250,
+         fit: BoxFit.cover,
+       ),
+
         Container(
-          child: Image(
-            image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Archlinux-icon-crystal-64.svg/1200px-Archlinux-icon-crystal-64.svg.png'),
-            ),
-        ),
-        Text('Arch Linux Icon'),
+         child: Text('Títol de la imatge'),
+         padding: EdgeInsets.all(10),
+         ),
       ],
     ),
  );
 }
-
