@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/widgets/widgets.dart';
+import 'package:practica_t2/widgets/widgets.dart';
 
 class DetailsScreen extends StatelessWidget {
   @override

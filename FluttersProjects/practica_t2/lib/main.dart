@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/providers/movies_provider.dart';
-import 'package:movies_app/screens/screens.dart';
+import 'package:practica_t2/providers/movies_provider.dart';
+import 'package:practica_t2/screens/screens.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(AppState());
 
 class AppState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: ( _ ) => MoviesProvider())
+        ChangeNotifierProvider(create: (_) => MoviesProvider()),
+        // Add other providers if needed
       ],
       child: MyApp(),
-      );
+    );
   }
 }
 
