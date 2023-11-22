@@ -16,9 +16,9 @@ class SpecifiedLocationListView extends StatelessWidget {
       future: locationClass.getListOfLocations(_locIDs),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError || snapshot.data == null) {
-          return Center(child: Text('Error Loading Data.'));
+          return const Center(child: Text('Error Loading Data.'));
         } else {
           var characters = snapshot.data!;
           return ListView.builder(

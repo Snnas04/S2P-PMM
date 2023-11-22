@@ -20,3 +20,4 @@ final characterGenderValues = {
   CharacterGender.unknown: "unknown",
   CharacterGender.empty: "",
 };
+

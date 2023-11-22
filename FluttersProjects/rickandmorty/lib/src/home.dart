@@ -28,9 +28,9 @@ class _HomePageState extends State<HomePage> {
       length: _tabs.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('R&M DART API'),
+          title: const Text('R&M DART API'),
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.open_in_new)),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.open_in_new)),
           ],
           bottom: TabBar(
             isScrollable: true,

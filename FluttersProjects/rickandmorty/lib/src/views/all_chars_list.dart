@@ -14,15 +14,16 @@ class CharacterListView extends StatelessWidget {
       future: charactersClass.getAllCharacters(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError || snapshot.data == null) {
-          return Center(child: Text('Error Loading Data.'));
+          return const Center(child: Text('Error Loading Data.'));
         } else {
           var characters = snapshot.data!;
           return ListView.builder(
             itemCount: characters.length,
             itemBuilder: (context, index) {
               return ListTile(
+                leading: Image.network(characters[index].image),
                 title: Text(characters[index].name),
                 subtitle: Text('Index Number - ${index + 1}'),
               );
@@ -33,3 +34,4 @@ class CharacterListView extends StatelessWidget {
     );
   }
 }
+
