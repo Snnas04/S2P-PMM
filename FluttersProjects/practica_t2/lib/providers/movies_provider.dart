@@ -1,33 +1,37 @@
 import 'package:flutter/material.dart';
-// import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 import 'package:practica_t2/models/models.dart';
 
-class MoviesProvider extends ChangeNotifier {
-  final String _baseUrl = 'api.themoviedb.org';
-  final String _apiKey = '292415afa58b2c33ab4bc0ffdaf18076';
-  final String _language = 'es-ES';
-  final String _page = '1';
+class VideosProvider extends ChangeNotifier {
+  final String _baseUrl = 'www.googleapis.com';
+  final String _apiKey = 'AIzaSyC8tXNHUrOsnQoSmkNhHg6KMOE5tuDFubk';
+  final String _part = 'snippet';
+  final String _maxResults = '10';
+  final String _q = 'trending';
+  final String _chart = 'mostPopular';
+  final String _type = 'video';
+  final String _region = 'ES';
 
-  List<Movie> onDisplayMovies = [];
+  List<Movie> onDisplayVideos = [];
 
-  MoviesProvider() {
-    getOnDisplayMovies();
+  VideosProvider() {
+    getOnDisplayVideos();
   }
 
-  getOnDisplayMovies() async {
-    var url = Uri.https(_baseUrl, '3/movie/now_playing', {
-      'api_key': _apiKey,
-      'language': _language,
-      'page': _page,
+  getOnDisplayVideos() async {
+    var url = Uri.https(_baseUrl, 'youtube/v3/videos', {
+      'part': _part,
+      'maxResults': _maxResults,
+      'chart': _chart,
+      'type': _type,
+      'region': _region,
+      'key': _apiKey,
     });
 
-    // Await the http get response, then decode the json-formatted response.
     final result = await http.get(url);
+    final searchResponse = NowPlayingResponse.fromJson(result.body as Map<String, dynamic>);
 
-    final nowPlayingResponse = NowPlayingResponse.fromJson(result.body as Map<String, dynamic>);
-
-    onDisplayMovies = nowPlayingResponse.results;
+    onDisplayVideos = searchResponse.results;
 
     notifyListeners();
   }

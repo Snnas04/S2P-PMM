@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final moviesProvider = Provider.of<MoviesProvider>(context);
+    final moviesProvider = Provider.of<VideosProvider>(context);
 
     // print(moviesProvider.onDisplayMovies);
 
@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             // Targetes principals
-            CardSwiper(movies: moviesProvider.onDisplayMovies),
+            CardSwiper(movies: moviesProvider.onDisplayVideos),
 
             // Slider de pel·licules
             const MovieSlider(),

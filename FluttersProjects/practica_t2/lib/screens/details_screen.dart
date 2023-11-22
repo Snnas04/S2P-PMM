@@ -113,7 +113,7 @@ class _PosterAndTitile extends StatelessWidget {
 class _Overview extends StatelessWidget {
   final Movie movie;
 
-  const _Overview({super.key, required this.movie});
+  const _Overview({required this.movie});
   
   @override
   Widget build(BuildContext context) {
