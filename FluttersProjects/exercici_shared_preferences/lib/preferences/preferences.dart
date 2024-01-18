@@ -20,7 +20,7 @@ class Preferences {
     _prefs.setString('nom', value);
   }
 
-    static bool get isDarkMode {
+    static bool get idDarkMode {
     return _prefs.getBool('darkmode') ?? _isDarkMode;
   }
 
