@@ -3,11 +3,13 @@ import 'package:provider/provider.dart';
 import 'package:qr_scan/screens/home_screen.dart';
 import 'package:qr_scan/screens/mapa_screen.dart';
 
+import 'provider/scan_list_provider.dart';
 import 'provider/ui_provider.dart';
 
 void main() => runApp(MultiProvider(
   providers: [
     ChangeNotifierProvider(create: (_) => UIProvider()),
+    ChangeNotifierProvider(create: (_) => ScanListProvider()),
   ],
   child: MyApp(),
 ));

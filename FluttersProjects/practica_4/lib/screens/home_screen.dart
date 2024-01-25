@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:qr_scan/provider/scan_list_provider.dart';
 import 'package:qr_scan/screens/screens.dart';
 import 'package:qr_scan/widgets/widgets.dart';
 
@@ -16,7 +17,9 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.delete_forever),
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<ScanListProvider>(context, listen: false).esborraTots();
+            },
           )
         ],
       ),
@@ -37,14 +40,27 @@ class _HomeScreenBody extends StatelessWidget {
     // Canviar per a anar canviant entre pantalles
     final currentIndex = uiProvider.selectedMenuOpt;
 
+    final scanListProvidre = Provider.of<ScanListProvider>(context, listen: false);
+
+
+    // Creacio temporan de la bbdd
+    // DBProvider.db.database;
+
+    // delete
+    // DBProvider.db.deleteAllScan();
+
     switch (currentIndex) {
       case 0:
+        scanListProvidre.carregaScansPerTipo('geo');
+
         return MapasScreen();
-
       case 1:
-        return DireccionsScreen();
+        scanListProvidre.carregaScansPerTipo('http');
 
+        return DireccionsScreen();
       default:
+        scanListProvidre.carregaScansPerTipo('geo');
+
         return MapasScreen();
     }
   }
