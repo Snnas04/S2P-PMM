@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:google_maps_flutter/google_maps_flutter.dart' show LatLng;
+
 class ScanModel {
     int? id;
     String? tipo;
@@ -16,6 +18,20 @@ class ScanModel {
         this.tipo = 'geo';
       }
     }
+
+LatLng getLatLng() {
+  if (valor.contains('geo')) {
+    final latLng = valor.substring(4).split(',');
+    final latitude = double.parse(latLng[0]);
+    final longitude = double.parse(latLng[1]);
+
+    return LatLng(latitude, longitude);
+  } else {
+    // No es pot retornar null, per aixo retornam un vealor per defecte, en aquest cas 39.7260888,2.9109173 (paucasesnoves)
+    return const LatLng(39.7260888,2.9109173);
+  }
+}
+
 
     factory ScanModel.fromRawJson(String str) => ScanModel.fromJson(json.decode(str));
 

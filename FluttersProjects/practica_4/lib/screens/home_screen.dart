@@ -4,6 +4,7 @@ import 'package:qr_scan/provider/scan_list_provider.dart';
 import 'package:qr_scan/screens/screens.dart';
 import 'package:qr_scan/widgets/widgets.dart';
 
+import '../provider/db_provider.dart';
 import '../provider/ui_provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -44,7 +45,7 @@ class _HomeScreenBody extends StatelessWidget {
 
 
     // Creacio temporan de la bbdd
-    // DBProvider.db.database;
+    DBProvider.db.database;
 
     // delete
     // DBProvider.db.deleteAllScan();
