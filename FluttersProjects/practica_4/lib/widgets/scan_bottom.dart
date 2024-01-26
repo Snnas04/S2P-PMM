@@ -19,24 +19,24 @@ class ScanButton extends StatelessWidget {
         print('Botó polsat!');
 
         // String barcodeScanRes = 'geo:39.7260888,2.9109173';
-        String barcodeScanRes = 'https://app.quicktype.io/';
+        // // String barcodeScanRes = 'https://app.quicktype.io/';
 
-        // insertar en la bbdd
-        final scanListProvider = Provider.of<ScanListProvider>(context, listen: false);
+        // // insertar en la bbdd
+        // final scanListProvider = Provider.of<ScanListProvider>(context, listen: false);
 
-        ScanModel nouScan = await scanListProvider.nouScan(barcodeScanRes);
-        launchURL(context, nouScan);
+        // ScanModel nouScan = await scanListProvider.nouScan(barcodeScanRes);
+        // launchURL(context, nouScan);
 
-        // String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
-        //   '#3D8BEF', 'Cancelar', false, ScanMode.QR);
+        String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
+          '#3D8BEF', 'Cancelar', false, ScanMode.QR);
 
         // print(barcodeScanRes);
         
-        // final scanListProvider = Provider.of<ScanListProvider>(context, listen: false);
+        final scanListProvider = Provider.of<ScanListProvider>(context, listen: false);
 
-        // ScanModel nouScan = ScanModel(valor: barcodeScanRes);
-        // scanListProvider.nouScan(barcodeScanRes);
-        // launchURL(context, nouScan);
+        ScanModel nouScan = ScanModel(valor: barcodeScanRes);
+        scanListProvider.nouScan(barcodeScanRes);
+        launchURL(context, nouScan);
       },
     );
   }

@@ -27,8 +27,8 @@ LatLng getLatLng() {
 
     return LatLng(latitude, longitude);
   } else {
-    // No es pot retornar null, per aixo retornam un vealor per defecte, en aquest cas 39.7260888,2.9109173 (paucasesnoves)
-    return const LatLng(39.7260888,2.9109173);
+    // No es pot retornar null, per aixo retornam un vealor per defecte, en aquest cas 39.6135612,2.5820139 (mallorca)
+    return const LatLng(39.6135612,2.5820139);
   }
 }
 
