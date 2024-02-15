@@ -51,7 +51,7 @@ class _MapaScreenState extends State<MapaScreen> {
         ],
       ),
       body: GoogleMap(
-        myLocationEnabled: true,
+        myLocationEnabled: false,
         myLocationButtonEnabled: false,
         mapType: _currentMapType,
         markers: markers,
